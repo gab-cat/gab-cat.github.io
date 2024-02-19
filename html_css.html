@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            font-family: Oswald;
+        }
+
+        body {
+            background-color: slategrey;
+        }
+
+        input, textarea {
+            border: 1px solid black;
+            border-radius: 5px;
+            text-indent: 5px;
+        }
+
+        label {
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body class="flex justify-center content-center p-20 item-center">
+    <article class="min-w-[25vw]  h-auto bg-white self-center m-auto p-10 rounded-lg drop-shadow-xl lg:w-[25vw]">
+        <h1 class="font-bold text-3xl text-center mb-3">Registration Form</h1>
+        <form class="flex flex-col">
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname">
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname">
+            <label for="nname">Nickname:</label>
+            <input type="text" name="nname">
+            <label for="email">Email:</label>
+            <input type="email" name="email">
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+            <label for="date_of_birth">Date of Birth: </label>
+            <input type="date" id="date_of_birth" name="date_of_birth">
+            <label for="gender">Gender: </label>
+            <div class="flex flex-row justify-between lg:justify-start">
+                <article>
+                    <input type="radio" id="male" name="gender" value="male" class="mx-2">
+                    <label for="male">Male</label>
+                </article>
+                <article>
+                    <input type="radio" id="female" name="gender" value="female" class="mx-2">
+                    <label for="female">Female</label>
+                </article>
+                <article>
+                    <input type="radio" id="others" name="gender" value="others" class="mx-2">
+                    <label for="others">Others</label>
+                </article>
+            </div>
+            <label for="mobile">Mobile: </label>
+            <input type="text" id="mobile" name="mobile">
+            <label for="address">Address:</label>
+            <textarea type="textarea" id="address" name="address" class="h-40 md:h10"></textarea>
+            <div class="flex flex-row text-center w-auto h-md mt-5 gap-x-2 color-white">
+                <button class="bg-[#008000] text-center min-w-[10vw] text-white drop-shadow-lg rounded-md" type="submit" value="Submit">Submit</button>
+                <button class="bg-[#ff0000] text-center min-w-[10vw] text-white drop-shadow-lg rounded-md">Reset</button>
+            </div>
+        </form>
+    </article>
+</body>
+</html>
