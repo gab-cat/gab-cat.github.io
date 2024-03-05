@@ -10,33 +10,45 @@
             const numOne = document.querySelector("#first-num").value;
             const numTwo = document.querySelector("#second-num").value;
             const result = document.querySelector("#result");
-
             const sum = parseInt(numOne) + parseInt(numTwo)
 
+            if (!numOne || !numTwo) {
+                result.textContent = 'Fields cannot be empty'
+                return;
+            }
+            
+            if (!sum) {
+                result.textContent = 'Invalid - not a number'
+                return;
+            }
             result.textContent = sum;
         }
     </script>
 </head>
-<body class="flex justify-center align-center w-screen h-screen content-center bg-orange-300">
-    <div class="bg-orange-50 w-[700px] m-auto p-5 flex-row rounded-lg justify-self-center shadow-lg">
-        <header class="text-center text-3xl font-bold p-2 m-2 text-orange-600">Enter two numbers to Find their Sum</header>
-        <div class="flex flex-col m-auto content-center align-center justify-center m-auto w-[450px] p-2">
-            <div class=" flex flex-row justify-between my-1">
-                <label class="font-bold">Enter the first number : </label>
-                <input type="text" placeholder="first number" id="first-num" class="rounded-md indent-1"/>
+<body class="flex justify-center align-center p-5 w-screen h-screen content-center bg-orange-300 relative">
+    <span class="w-[400px] h-[200px] animate-ping m-auto p-5 justify-self-center flex justify-center align-center z-[-1] bg-white absolute top-0 bottom-0 right-0 left-0">
+    </span>
+    <div class="animate-none relative z-10 m-auto justify-center justify-self-center">
+        <div class="bg-orange-50 w-[700px] m-auto p-5 flex-row rounded-lg justify-self-center shadow-lg">
+            <header class="text-center text-3xl font-bold p-2 m-2 text-orange-600">Enter two numbers to Find their Sum</header>
+            <div class="flex flex-col m-auto content-center align-center justify-center m-auto w-[450px] p-2">
+                <div class=" flex flex-row justify-between my-1">
+                    <label class="font-bold">Enter the first number : </label>
+                    <input type="text" placeholder="First number" id="first-num" class="rounded-md indent-2"/>
+                </div>
+                <div class="flex flex-row justify-between my-1 ">
+                    <label class="font-bold">Enter the second number :</label>
+                    <input type="text" placeholder="Second number" id="second-num" class="rounded-md indent-2"/>
+                </div>
             </div>
-            <div class="flex flex-row justify-between my-1 ">
-                <label class="font-bold">Enter the second number :</label>
-                <input type="text" placeholder="second number" id="second-num" class="rounded-md indent-1"/>
-            </div>
+            <button onclick="calculateSum()" 
+            class="flex justify-center content-center m-auto w-[200px] 
+            h-[25px] font-bold my-2 bg-orange-500 text-white rounded-md transition-all hover:bg-orange-400 active:bg-orange-100">Calculate SUM</button>
+            <article class="flex flex-col my-5">
+                <div class="text-xl text-center">The result is:</div>
+                <div class="text-center text-5xl font-bold text-orange-600 mt-3" id="result">0</div>
+            </article>
         </div>
-        <button onclick="calculateSum()" 
-        class="flex justify-center content-center m-auto w-[200px] 
-        h-[25px] font-bold my-2 bg-orange-500 text-white rounded-md transition-all hover:bg-orange-400">Calculate SUM</button>
-        <article class="flex flex-col my-5">
-            <div class="text-xl text-center">The result is:</div>
-            <div class="text-center text-5xl font-bold text-orange-600" id="result">0</div>
-        </article>
     </div>
 </body>
 </html>
