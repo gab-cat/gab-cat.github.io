@@ -13,16 +13,28 @@
             const sum = parseInt(numOne) + parseInt(numTwo)
 
             if (!numOne || !numTwo) {
-                result.textContent = 'Fields cannot be empty'
-                return;
+                alert('Fields cannot be empty');
+                return
             }
             
             if (!sum) {
-                result.textContent = 'Invalid - not a number'
+                alert('Invalid - not a number');
                 return;
             }
             result.textContent = sum;
         }
+
+        const handleInputChange = (event) => {
+            const input = event.target;
+            const inputValue = input.value;
+
+            const regex = /^[0-9.]*$/;
+
+            if (!regex.test(inputValue)) {
+                input.value = inputValue.slice(0, -1);
+            }
+        };
+
     </script>
 </head>
 <body class="flex justify-center align-center p-5 w-screen h-screen content-center bg-orange-300 relative">
@@ -34,11 +46,11 @@
             <div class="flex flex-col m-auto content-center align-center justify-center m-auto w-[450px] p-2">
                 <div class=" flex flex-row justify-between my-1">
                     <label class="font-bold">Enter the first number : </label>
-                    <input type="text" placeholder="First number" id="first-num" class="rounded-md indent-2"/>
+                    <input oninput="handleInputChange(event)" type="text" placeholder="First number" id="first-num" class="rounded-md indent-2"/>
                 </div>
                 <div class="flex flex-row justify-between my-1 ">
                     <label class="font-bold">Enter the second number :</label>
-                    <input type="text" placeholder="Second number" id="second-num" class="rounded-md indent-2"/>
+                    <input oninput="handleInputChange(event)" type="text" placeholder="Second number" id="second-num" class="rounded-md indent-2"/>
                 </div>
             </div>
             <button onclick="calculateSum()" 
