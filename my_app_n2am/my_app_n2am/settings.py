@@ -77,9 +77,10 @@ WSGI_APPLICATION = "my_app_n2am.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "",
-        "USER": "",
-        "PASSWORD": "",
+        "NAME": "test1",
+        "USER": "member",
+        "PASSWORD": "member",
+        "PORT": "8080",
     }
 }
 
